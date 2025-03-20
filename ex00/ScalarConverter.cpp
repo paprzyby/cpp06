@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 16:22:23 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/03/18 16:35:40 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:34:20 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,3 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 }
 
 ScalarConverter::~ScalarConverter()	{}
-
-void ScalarConverter::convert(std::string const &literal)
-{
-
-}
