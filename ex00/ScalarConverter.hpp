@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 16:21:14 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/03/19 16:36:56 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/03/21 12:23:54 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	convertChar(std::string string);
 void	convertInt(std::string string);
 void	convertFloat(std::string string);
 void	convertDouble(std::string string);
+void	convertPseudo(std::string string);
 
 #endif
