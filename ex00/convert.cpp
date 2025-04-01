@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:34:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/03/21 12:33:13 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:34:40 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,27 @@
 //	}
 //}
 
-//void	convertInt(std::string string)
-//{
+void	convertInt(std::string string)
+{
+	std::string::iterator	str;
 
-//}
+	str = string.begin();
+	if (*str == '+' || *str == '-')
+	{
+		str++;
+		std::cerr << "+ or -" << std::endl;
+		return ;
+	}
+	while (str != string.end())
+	{
+		if (!std::isdigit(*str))
+		{
+			std::cerr << "This argument is not valid" << std::endl;
+			return ;
+		}
+		str++;
+	}
+}
 
 void	convertPseudo(std::string string)
 {
@@ -96,6 +113,6 @@ void ScalarConverter::convert(std::string const &literal)
 	}
 	else
 	{
-		std::cout << "int" << std::endl;
+		convertInt(literal);
 	}
 }
