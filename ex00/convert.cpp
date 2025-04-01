@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:34:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/01 15:34:40 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:02:48 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,11 @@
 
 void	convertInt(std::string string)
 {
-	std::string::iterator	str;
+	std::string::iterator	str = string.begin();
 
-	str = string.begin();
 	if (*str == '+' || *str == '-')
 	{
 		str++;
-		std::cerr << "+ or -" << std::endl;
-		return ;
 	}
 	while (str != string.end())
 	{
@@ -54,6 +51,33 @@ void	convertInt(std::string string)
 		}
 		str++;
 	}
+	if (string.length() > 18)
+	{
+		std::cerr << "This argument is not valid" << std::endl;
+		return ;
+	}
+	long long num = std::stoll(string);
+	if (isprint(num))
+	{
+		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
+	}
+	else
+	{
+		if (num < 0 || num > 255)
+			std::cout << "char: impossible" << std::endl;
+		else
+			std::cout << "char: " << "Non displayable" << std::endl;
+	}
+	if (num > INT_MAX)
+	{
+		std::cout << "int: impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << "int: " << num << std::endl;
+	}
+	std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
 }
 
 void	convertPseudo(std::string string)
@@ -81,9 +105,9 @@ void	convertPseudo(std::string string)
 void	convertChar(std::string string)
 {
 	std::cout << "char: '" << string << "'" << std::endl;
-	std::cerr << "int: " << static_cast<int>(string[0]) << std::endl;
-	std::cerr << "float: " << static_cast<float>(string[0]) << ".0f" << std::endl;
-	std::cerr << "double: " << static_cast<double>(string[0]) << ".0" << std::endl;
+	std::cout << "int: " << static_cast<int>(string[0]) << std::endl;
+	std::cout << "float: " << static_cast<float>(string[0]) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(string[0]) << ".0" << std::endl;
 }
 
 void ScalarConverter::convert(std::string const &literal)
