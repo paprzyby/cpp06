@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:34:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/01 16:02:48 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:49:42 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,67 @@
 
 //}
 
-//void	convertFloat(std::string string)
-//{
-//	bool					minus_flag = false;
-//	std::string::iterator	str;
+void	convertFloat(std::string string)
+{
+	std::string::iterator	str = string.begin();
+	int						dots_count = 0;
+	int						f_count = 0;
 
-//	if (string[0] == '-' || string[0] == '+')
-//	{
-//		if (string[0] == '-')
-//			minus_flag = true;
-//		str = string.begin() + 1;
-//	}
-//	else
-//	{
-//		str = string.begin();
-//	}
-//}
+	if (*str == '+' || *str == '-')
+	{
+		str++;
+	}
+	while (str != string.end())
+	{
+		if (*str == '.')
+		{
+			dots_count++;
+		}
+		else if (*str == 'f')
+		{
+			if (str + 1 != string.end())
+			{
+				std::cerr << "This argument is not valid" << std::endl;
+				return ;
+			}
+			f_count++;
+		}
+		else if (!std::isdigit(*str))
+		{
+			std::cerr << "This argument is not valid" << std::endl;
+			return ;
+		}
+		str++;
+	}
+	if (dots_count != 1 || f_count != 1)
+	{
+		std::cerr << "This argument is not valid" << std::endl;
+		return ;
+	}
+
+	float num = std::stof(string);
+	if (isprint(num))
+	{
+		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
+	}
+	else
+	{
+		if (num < 0 || num > 255)
+			std::cout << "char: impossible" << std::endl;
+		else
+			std::cout << "char: " << "Non displayable" << std::endl;
+	}
+	if (num > INT_MAX)
+	{
+		std::cout << "int: impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << "int: " << static_cast<int>(num) << std::endl;
+	}
+	std::cout << "float: " << num << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+}
 
 void	convertInt(std::string string)
 {
@@ -129,7 +174,7 @@ void ScalarConverter::convert(std::string const &literal)
 	}
 	else if (literal.find("f") != std::string::npos)
 	{
-		std::cout << "float" << std::endl;
+		convertFloat(literal);
 	}
 	else if (literal.find(".") != std::string::npos)
 	{
@@ -140,3 +185,6 @@ void ScalarConverter::convert(std::string const &literal)
 		convertInt(literal);
 	}
 }
+
+//casees to handle:
+//./convert 1.0000090f
