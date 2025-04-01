@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 16:21:14 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/03/21 12:23:54 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/03/25 12:50:53 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class	ScalarConverter
 {
 	public:
+		static void convert(std::string const &literal);
+
+	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &other);
 		ScalarConverter &operator=(const ScalarConverter &other);
 		~ScalarConverter();
-
-	public:
-		static void convert(std::string const &literal);
 };
 
 void	convertChar(std::string string);

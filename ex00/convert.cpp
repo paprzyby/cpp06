@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:34:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/03/21 12:25:29 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/03/21 12:33:13 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void ScalarConverter::convert(std::string const &literal)
 	if (literal.empty())
 	{
 		std::cerr << "Empty string is not valid" << std::endl;
-		return ;
 	}
 	else if (literal == "nan" || literal == "nanf" ||
 		literal == "+inf" || literal == "+inff" ||
@@ -82,7 +81,6 @@ void ScalarConverter::convert(std::string const &literal)
 		literal == "inf" || literal == "inff")
 	{
 		convertPseudo(literal);
-		return ;
 	}
 	else if (literal.length() == 1 && !std::isdigit(literal[0]))
 	{
