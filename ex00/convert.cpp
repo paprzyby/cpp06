@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:34:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/01 16:52:56 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:40:42 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,14 @@ void	convertDouble(std::string string)
 	{
 		std::cout << "int: " << static_cast<int>(num) << std::endl;
 	}
-	std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
-	std::cout << "double: " << num << ".0" << std::endl;
+	std::cout << "float: " << num;
+	if (num == static_cast<int>(num))
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
+	std::cout << "double: " << num;
+	if (num == static_cast<int>(num))
+		std::cout << ".0";
+	std::cout << std::endl;
 }
 
 void	convertFloat(std::string string)
@@ -122,8 +128,14 @@ void	convertFloat(std::string string)
 	{
 		std::cout << "int: " << static_cast<int>(num) << std::endl;
 	}
-	std::cout << "float: " << num << ".0f" << std::endl;
-	std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+	std::cout << "float: " << num;
+	if (num == static_cast<int>(num))
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(num);
+	if (num == static_cast<int>(num))
+		std::cout << ".0";
+	std::cout << std::endl;
 }
 
 void	convertInt(std::string string)
@@ -232,6 +244,3 @@ void ScalarConverter::convert(std::string const &literal)
 		convertInt(literal);
 	}
 }
-
-//casees to handle:
-//./convert 1.0000090f
