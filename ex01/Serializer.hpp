@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 16:21:14 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/02 17:53:46 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/03 17:10:27 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Serializer
 {
 	public:
 		static uintptr_t	serialize(Data* ptr);
-		Data*				deserialize(uintptr_t raw);
+		static Data*		deserialize(uintptr_t raw);
 
 	private:
 		Serializer();
