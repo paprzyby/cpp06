@@ -6,9 +6,26 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:17:43 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/03 17:17:55 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/03 17:31:28 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Base.hpp"
+
+//Base	*generate()
+//{
+
+//}
+
+//void	identify(Base *p)
+//{
+
+//}
+
+//void	identify(Base &p)
+//{
+
+//}
 
 int	main()
 {
