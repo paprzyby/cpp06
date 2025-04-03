@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:17:43 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/03 18:19:15 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/03 18:27:54 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ void	identify(Base *p)
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B*>(p))
 		std::cout << "B" << std::endl;
-	else
+	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
+	else
+		std::cerr << "NULL" << std::endl;
 }
 
 void	identify(Base &p)
