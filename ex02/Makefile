@@ -6,13 +6,13 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/30 16:15:27 by paprzyby          #+#    #+#              #
-#    Updated: 2025/04/03 17:19:20 by paprzyby         ###   ########.fr        #
+#    Updated: 2025/04/08 15:50:55 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 
-NAME =		serialization
+NAME =		base
 
 SRC =		main.cpp \
 			Base.cpp \

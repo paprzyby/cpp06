@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 16:21:14 by paprzyby          #+#    #+#             */
-/*   Updated: 2025/04/01 15:53:49 by paprzyby         ###   ########.fr       */
+/*   Updated: 2025/04/14 15:04:15 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <climits>
+# include <iomanip>
+# include <cmath>
 
 class	ScalarConverter
 {
